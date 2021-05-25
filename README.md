@@ -17,5 +17,12 @@ state
 country
 shape
 
+I first worked on UFO-level-1 by creating a index.html inside the folder and created a static folder containing css folder for html style, js folder containing data.js and app.js, and images folder containing images for the website.
+ 
+ in app.js file, 
+ 1. Get the data from data.js by defining a tabledata using data.js
+ 2. Create the HTML object references to the form elements (tbody, #form, #datetime, #filter-btn)
+ 3. Assign handler to the target objects in the HTML file
+ 4.Create event handlers for clicking the button or pressing the enter key; Create the function runFilter() to run for both events
 
 
