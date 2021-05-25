@@ -23,6 +23,23 @@ I first worked on UFO-level-1 by creating a index.html inside the folder and cre
  1. Get the data from data.js by defining a tabledata using data.js
  2. Create the HTML object references to the form elements (tbody, #form, #datetime, #filter-btn)
  3. Assign handler to the target objects in the HTML file
- 4.Create event handlers for clicking the button or pressing the enter key; Create the function runFilter() to run for both events
+ 4. Create event handlers for clicking the button or pressing the enter key; Create the function runFilter() to run for both events
+ 5. Prevent the page from refreshing
+ 6. Select the input element and get the raw HTML node via d2 function
+7.  Get the value property of the input element
+8. Print the value to the console
+9. Zero out the table object before appending the new filtered results
+  using tbody.html("");
+10. Filter data by the entered data/time, and save them in filteredResults.
+11. return a no data  if data is not  found
+12. Loop through each UFO sighting record in the filteredResults, and append a row to the table for each sighting
+13. If no sighting records found for a given date, no new row will be appended.
+14. print the '<tr></tr>' HTML tag.
+15. fill in each cell with the value extracted from the ufoRecord. the table header order matches the order of the keys in data.js
+      
+   
+  
+  
+
 
 
