@@ -40,20 +40,45 @@ function runFilter() {
 
   //Filter data by the entered data/time, and save them in filteredResults.
   let filteredResults = tableData.filter(dat => dat.datetime === inputValue);
+  //return a no data  if data is not  found
+  if (filteredResults === undefined){
+      // let row = tbody.append('tr');
+      // row.text("no data")
+      tbody.innerHTML("no data");
 
-  // Loop through each UFO sighting record in the filteredResults, and append a row to the table for each sighting
-  // If no sighting records found for a given date, no new row will be appended.
-  filteredResults.forEach((ufoRecord) => {
-    // print the '<tr></tr>' HTML tag.
-    let row = tbody.append('tr');
+      document.getElementById('tabledata').innerHTML = "No Data";
+  }
+  else {
+    // Loop through each UFO sighting record in the filteredResults, and append a row to the table for each sighting
+    // If no sighting records found for a given date, no new row will be appended.
+    filteredResults.forEach((ufoRecord) => {
+      // print the '<tr></tr>' HTML tag.
+      let row = tbody.append('tr');
 
-    // fill in each cell with the value extracted from the ufoRecord. 
-    // Please note: the table header order matches the order of the keys in data.js
-    Object.entries(ufoRecord).forEach(([key, value]) => {
-      let cell = row.append("td");
-      cell.text(value);
+      // fill in each cell with the value extracted from the ufoRecord. 
+      // Please note: the table header order matches the order of the keys in data.js
+      Object.entries(ufoRecord).forEach(([key, value]) => {
+        let cell = row.append("td");
+        cell.text(value);
+      });
+
     });
+    
+  }
+   
+  // // Loop through each UFO sighting record in the filteredResults, and append a row to the table for each sighting
+  // // If no sighting records found for a given date, no new row will be appended.
+  // filteredResults.forEach((ufoRecord) => {
+  //   // print the '<tr></tr>' HTML tag.
+  //   let row = tbody.append('tr');
 
-  });
+  //   // fill in each cell with the value extracted from the ufoRecord. 
+  //   // Please note: the table header order matches the order of the keys in data.js
+  //   Object.entries(ufoRecord).forEach(([key, value]) => {
+  //     let cell = row.append("td");
+  //     cell.text(value);
+  //   });
+
+  // });
 
 } // end function runFilter()
